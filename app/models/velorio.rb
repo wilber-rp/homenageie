@@ -1,0 +1,2 @@
+class Velorio < ApplicationRecord
+end

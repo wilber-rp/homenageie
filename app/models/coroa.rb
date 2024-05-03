@@ -1,0 +1,2 @@
+class Coroa < ApplicationRecord
+end
