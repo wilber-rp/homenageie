@@ -1,4 +1,9 @@
 class CoroasController < ApplicationController
+
+  def index
+    @coroas = Coroa.all
+  end
+
   def create
     @coroa = current_user.build_coroa(coroa_params)
 

@@ -1,0 +1,15 @@
+<h1>Lista das Coroas</h1>
+
+<% @coroas.each do |coroa| %>
+
+  <% valor = coroa.preco_em_centavos / 100 %>
+  <% centavos = coroa.preco_em_centavos % 100 %>
+  <% centavos_formatados = centavos < 10 ? "0#{centavos}" : centavos %>
+
+  <p>
+    <strong>Código:</strong> <%= coroa.codigo %><br>
+    <strong>Descrição:</strong> <%= coroa.descricao %><br>
+    <strong>Valor:</strong> R$<%= "#{valor},#{centavos_formatados}" %>
+  </p>
+
+<% end %>
