@@ -1,0 +1,15 @@
+<%= simple_form_for [@pedido] do |f| %>
+
+        <%= f.input :nome_falecido, label: false, placeholder: "Nome do Falecido" %>
+
+        <%= f.input :faixa, label: false, placeholder: "Frase para a faixa da coroa" %>
+
+        <%= f.collection_select :velorio, @velorios, :id, :nome, { include_blank: 'Selecione o velório' } %>
+
+        <%= f.collection_select :pagamento, @pagamentos, :id, :tipo, { include_blank: 'Forma de pagamento' } %>
+
+        <%= f.input :data_velorio, label: "Data" %>
+
+        <%= f.submit 'Adicionar Ordem', class: 'btn btn-primary' %>
+
+      <% end %>
