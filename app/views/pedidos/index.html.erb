@@ -7,8 +7,9 @@
   <% centavos_formatados = centavos < 10 ? "0#{centavos}" : centavos %>
 
   <p>
-    <strong>Código:</strong> <%= pedido.nome_falecido %><br>
-    <strong>Código:</strong> <%= pedido.faixa %><br>
+    <strong>Nome do Falecido:</strong> <%= pedido.nome_falecido %><br>
+    <strong>Faixa:</strong> <%= pedido.faixa %><br>
+    <strong>Endereço:</strong> <%= pedido.velorio.nome %><br>
 
     <strong>Código:</strong> <%= pedido.coroa.codigo %><br>
     <strong>Descrição:</strong> <%= pedido.coroa.descricao %><br>
