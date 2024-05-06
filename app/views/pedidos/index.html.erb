@@ -1,0 +1,16 @@
+<h1>Lista das Pedidos</h1>
+
+<% @pedidos.each do |pedido| %>
+
+  <% valor = pedido.coroa.preco_em_centavos / 100 %>
+  <% centavos = pedido.coroa.preco_em_centavos % 100 %>
+  <% centavos_formatados = centavos < 10 ? "0#{centavos}" : centavos %>
+
+  <p>
+    <strong>Código:</strong> <%= pedido.coroa.codigo %><br>
+    <strong>Descrição:</strong> <%= pedido.coroa.descricao %><br>
+    <strong>Valor:</strong> R$<%= "#{valor},#{centavos_formatados}" %><br>
+
+  </p>
+
+<% end %>
