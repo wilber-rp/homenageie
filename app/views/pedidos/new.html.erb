@@ -4,11 +4,11 @@
 
         <%= f.input :faixa, label: false, placeholder: "Frase para a faixa da coroa" %>
 
-        <%= f.collection_select :velorio, @velorios, :id, :nome, { include_blank: 'Selecione o velório' } %>
-
-        <%= f.collection_select :pagamento, @pagamentos, :id, :tipo, { include_blank: 'Forma de pagamento' } %>
+        <%= f.collection_select :velorio_id, @velorios, :id, :nome, { include_blank: 'Selecione o velório' } %>
 
         <%= f.input :data_velorio, label: "Data" %>
+
+        <%= f.text_field :coroa_id, label: "Coroa", value: @coroa.id %>
 
         <%= f.submit 'Adicionar Ordem', class: 'btn btn-primary' %>
 
