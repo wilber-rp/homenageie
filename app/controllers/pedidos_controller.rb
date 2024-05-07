@@ -7,7 +7,7 @@ class PedidosController < ApplicationController
     @pedido = Pedido.new
     @velorios = Velorio.all
     @pagamentos = Pagamento.all
-    @coroa = Coroa.find(params[:format])
+    @coroa = Coroa.find(params[:coroa_id])
   end
 
   def create
@@ -26,7 +26,7 @@ class PedidosController < ApplicationController
     if @pedido.save
       @pagamento.save
       @entrega.save
-      redirect_to edit_pagamento_path(@pagamento), notice: 'pedido inserido com sucesso'
+      redirect_to edit_pedido_pagamento_path(@pedido, @pagamento), notice: 'pedido inserido com sucesso'
     else
       render :new, status: :unprocessable_entity
     end

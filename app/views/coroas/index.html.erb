@@ -10,7 +10,7 @@
     <strong>Código:</strong> <%= coroa.codigo %><br>
     <strong>Descrição:</strong> <%= coroa.descricao %><br>
     <strong>Valor:</strong> R$<%= "#{valor},#{centavos_formatados}" %><br>
-    <strong><%= link_to 'Comprar', new_pedido_path(coroa), class: 'btn btn-primary' %></strong>
+    <strong><%= link_to 'Comprar', new_pedido_path(coroa_id: coroa.id), class: 'btn btn-primary' %></strong>
   </p>
 
 <% end %>

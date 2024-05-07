@@ -1,0 +1,15 @@
+<%= simple_form_for [@pagamento] do |f| %>
+
+        <%= f.input :tipo, label: false, placeholder: "Tipo" %>
+
+        <%= f.input :parcelas, label: false, placeholder: "Quantidade de parcelas" %>
+
+        <%= f.input :identificador, label: "Identificador" %>
+
+        <%= f.input :status, label: "Status" %>
+
+        <%= f.text_field :card_token %>
+
+        <%= f.submit 'Pagar', class: 'btn btn-primary' %>
+
+      <% end %>
