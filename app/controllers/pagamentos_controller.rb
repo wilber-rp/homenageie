@@ -20,5 +20,4 @@ class PagamentosController < ApplicationController
   def pagamento_params
     params.require(:pagamento).permit(:tipo, :parcelas, :identificador, :card_token)
   end
-
 end
