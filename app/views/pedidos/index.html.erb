@@ -2,15 +2,32 @@
 
 <% @pedidos.each do |pedido| %>
 
+<div style="border: 2px solid #000; padding: 20px;">
   <% valor = pedido.coroa.preco_em_centavos / 100 %>
   <% centavos = pedido.coroa.preco_em_centavos % 100 %>
   <% centavos_formatados = centavos < 10 ? "0#{centavos}" : centavos %>
 
   <p>
+    <strong>Nome do Falecido:</strong> <%= pedido.nome_falecido %><br>
+    <strong>Faixa:</strong> <%= pedido.faixa %><br>
+    <strong>Endereço:</strong> <%= pedido.velorio.nome %><br>
+
     <strong>Código:</strong> <%= pedido.coroa.codigo %><br>
     <strong>Descrição:</strong> <%= pedido.coroa.descricao %><br>
     <strong>Valor:</strong> R$<%= "#{valor},#{centavos_formatados}" %><br>
 
+    <strong>Pagamento ID:</strong> <%= pedido.pagamento.id %><br>
+    <strong>Pagamento Tipo:</strong> <%= pedido.pagamento.tipo %><br>
+    <strong>Pagamento Status:</strong> <%= pedido.pagamento.status %><br>
+
+    <strong>Entrega ID:</strong> <%= pedido.entrega.id %><br>
+    <strong>Entrega Status:</strong> <%= pedido.entrega.status %><br>
+
+    <% if pedido.pagamento.status == "Aguardando Pagamento" %>
+      <strong><%= button_to 'Pagar', edit_pedido_pagamento_path(pedido, pedido.pagamento), method: :get, class: 'btn btn-primary' %></strong>
+      
+    <% end %>
   </p>
+</div>
 
 <% end %>
